@@ -1,0 +1,39 @@
+<div class="row">
+  <form class="form-horizontal" role="form">
+    <legend>Seconds Conversion</legend>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <label class="control-label" for="seconds">Seconds</label>
+        <div class="controls">
+          <input type="number" data-ng-model="seconds" class="form-control" id="seconds" placeholder="0">
+        </div>
+      </div>
+    </div>
+
+    
+
+    <input type="submit" class="btn btn-primary" value="Calculate">
+  </form>
+</div>
+<br>
+<div class="row">
+  <div class="show col-sm-12 center-block">
+    <div class="well text-center">
+      <p>
+        <div class="weeks" data-ng-class="{'calc-hide' : weeks <= 0}">
+          <div class="weeks" data-ng-bind="weeks"></div> Week<div class="weeks" data-ng-class="{'calc-hide' : weeks <= 2}">s</div>
+        </div>
+        <div class="days" data-ng-class="{'calc-hide' : days <= 0}">
+          <div class="days" data-ng-bind="days"></div> Day<div class="weeks" data-ng-class="{'calc-hide' : days <= 2}">s</div>
+        </div>
+        <div class="hours" data-ng-class="{'calc-hide' : hours <= 0}">
+          <div class="hours" data-ng-bind="hours"></div> Hour<div class="weeks" data-ng-class="{'calc-hide' : hours <= 2}">s</div>
+        </div>
+        <div class="minutes" data-ng-class="{'calc-hide' : minutes <= 0}">
+          <div class="minutes" data-ng-bind="minutes"></div> Minute<div class="weeks" data-ng-class="{'calc-hide' : minutes <= 2}">s</div>
+        </div>
+      </p>
+    </div>
+  </div>
+</div>
