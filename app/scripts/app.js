@@ -19,10 +19,10 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
+      // .when('/', {
+      //   templateUrl: 'views/main.html',
+      //   controller: 'MainCtrl'
+      // })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
@@ -32,6 +32,6 @@ angular
         controller: 'SecondsCalcCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/seconds_calc'
       });
   });

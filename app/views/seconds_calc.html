@@ -4,34 +4,38 @@
 
     <div class="form-group">
       <div class="col-sm-12">
-        <label class="control-label" for="seconds">Seconds</label>
+        <label class="control-label" for="secondsInput">Seconds</label>
         <div class="controls">
-          <input type="number" data-ng-model="seconds" class="form-control" id="seconds" placeholder="0">
+          <input type="number" data-ng-model="secondsInput" class="form-control" id="secondsInput" placeholder="0">
         </div>
       </div>
     </div>
 
     
 
-    <input type="submit" class="btn btn-primary" value="Calculate">
+    <input type="submit" ng-click="refresh()" class="btn btn-success" value="Calculate" data-ng-class="{'active' : btnActive === true}">
+    <input type="submit" ng-click="reset()" class="btn btn-default" value="Reset" data-ng-class="{'active' : btnActive === true}">
   </form>
 </div>
 <br>
-<div class="row">
+<div class="row" data-ng-class="{'hidden' : showAnswer === false}">
   <div class="show col-sm-12 center-block">
     <div class="well text-center">
       <p>
         <div class="weeks" data-ng-class="{'calc-hide' : weeks <= 0}">
-          <div class="weeks" data-ng-bind="weeks"></div> Week<div class="weeks" data-ng-class="{'calc-hide' : weeks <= 2}">s</div>
+          <div class="weeks" data-ng-bind="weeks"></div> Week<div class="weeks" data-ng-class="{'calc-hide' : weeks <= 1}">s</div>
         </div>
         <div class="days" data-ng-class="{'calc-hide' : days <= 0}">
-          <div class="days" data-ng-bind="days"></div> Day<div class="weeks" data-ng-class="{'calc-hide' : days <= 2}">s</div>
+          <div class="days" data-ng-bind="days"></div> Day<div class="weeks" data-ng-class="{'calc-hide' : days <= 1}">s</div>
         </div>
         <div class="hours" data-ng-class="{'calc-hide' : hours <= 0}">
-          <div class="hours" data-ng-bind="hours"></div> Hour<div class="weeks" data-ng-class="{'calc-hide' : hours <= 2}">s</div>
+          <div class="hours" data-ng-bind="hours"></div> Hour<div class="weeks" data-ng-class="{'calc-hide' : hours <= 1}">s</div>
         </div>
         <div class="minutes" data-ng-class="{'calc-hide' : minutes <= 0}">
-          <div class="minutes" data-ng-bind="minutes"></div> Minute<div class="weeks" data-ng-class="{'calc-hide' : minutes <= 2}">s</div>
+          <div class="minutes" data-ng-bind="minutes"></div> Minute<div class="weeks" data-ng-class="{'calc-hide' : minutes <= 1}">s</div>
+        </div>
+        <div class="seconds" data-ng-class="{'calc-hide' : seconds <= 0}">
+          <div class="seconds" data-ng-bind="seconds"></div> Second<div class="weeks" data-ng-class="{'calc-hide' : seconds <= 1}">s</div>
         </div>
       </p>
     </div>
